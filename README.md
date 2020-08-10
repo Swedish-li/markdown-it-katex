@@ -1,4 +1,4 @@
-# @swedish/markdown-it-katex
+# @swedish-li/markdown-it-katex
 
 Forked from [waylonflinn/markdown-it-katex](https://github.com/waylonflinn/markdown-it-katex)
 
@@ -29,7 +29,7 @@ Use it in your javascript
 
 ```javascript
 var md = require('markdown-it')(),
-    mk = require('@swedish/markdown-it-katex');
+    mk = require('@swedish-li/markdown-it-katex');
 
 md.use(mk);
 

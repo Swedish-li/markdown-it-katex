@@ -1,6 +1,6 @@
 {
   "name": "@swedish-li/markdown-it-katex",
-  "version": "3.0.0-beta.1",
+  "version": "3.0.0-beta.2",
   "description": "Fast math support for markdown-it with KaTeX",
   "main": "dist/markdown-it-katex.cjs.js",
   "module": "dist/markdown-it-katex.esm.js",
@@ -26,13 +26,12 @@
     "markdown-it-plugin",
     "markdown-it"
   ],
-  "author": "one.piece.li.2016@gmail.com",
+  "author": "Swedish-li<one.piece.li.2016@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
     "katex": "^0.12.0"
   },
   "devDependencies": {
-    "@rollup/plugin-typescript": "^5.0.2",
     "@types/jest": "^26.0.9",
     "@types/katex": "^0.11.0",
     "@types/markdown-it": "^10.0.1",
@@ -40,15 +39,17 @@
     "jest": "^26.2.2",
     "katex": "^0.12.0",
     "markdown-it": "^11.0.0",
-    "markdown-it-testgen": "^0.1.6",
     "prettier": "^2.0.5",
     "rollup": "^2.23.1",
     "rollup-plugin-typescript2": "^0.27.2",
-    "tape": "^5.0.1",
     "ts-jest": "^26.1.4",
     "typescript": "^3.9.7"
   },
   "engines": {
     "node": ">=10.0.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/Swedish-li/markdown-it-katex/issues"
+  },
+  "homepage": "https://github.com/Swedish-li/markdown-it-katex#readme"
 }
