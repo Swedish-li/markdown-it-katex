@@ -1,6 +1,6 @@
 {
   "name": "@swedish-li/markdown-it-katex",
-  "version": "3.0.0-beta.2",
+  "version": "3.0.0-beta.4",
   "description": "Fast math support for markdown-it with KaTeX",
   "main": "dist/markdown-it-katex.cjs.js",
   "module": "dist/markdown-it-katex.esm.js",

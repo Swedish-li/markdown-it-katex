@@ -25,6 +25,12 @@ Install the plugin
 npm install @swedish-li/markdown-it-katex
 ```
 
+Install the katex
+
+```
+npm install katex
+```
+
 Use it in your javascript
 
 ```javascript
