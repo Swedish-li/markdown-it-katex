@@ -1,15 +1,22 @@
 {
-  "name": "markdown-it-katex",
-  "version": "2.0.3",
+  "name": "@swedish-li/markdown-it-katex",
+  "version": "3.0.0-beta.1",
   "description": "Fast math support for markdown-it with KaTeX",
-  "main": "index.js",
+  "main": "dist/markdown-it-katex.cjs.js",
+  "module": "dist/markdown-it-katex.esm.js",
+  "types": "src/index.ts",
+  "files": [
+    "index.js",
+    "dist"
+  ],
   "scripts": {
-    "watch": "watchify browser.js -o bundle.js -v",
-    "test": "node test/all.js"
+    "prebuild": "rm -rf dist",
+    "build": "rollup --config",
+    "test": "jest --coverage"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:waylonflinn/markdown-it-katex.git"
+    "url": "git+https://github.com/Swedish-li/markdown-it-katex.git"
   },
   "keywords": [
     "markdown",
@@ -19,14 +26,29 @@
     "markdown-it-plugin",
     "markdown-it"
   ],
-  "author": "waylonflinn@gmail.com",
+  "author": "one.piece.li.2016@gmail.com",
   "license": "MIT",
-  "dependencies": {
-    "katex": "^0.6.0"
+  "peerDependencies": {
+    "katex": "^0.12.0"
   },
   "devDependencies": {
-    "markdown-it": "^6.0.0",
-    "markdown-it-testgen": "^0.1.4",
-    "tape": "^4.5.1"
+    "@rollup/plugin-typescript": "^5.0.2",
+    "@types/jest": "^26.0.9",
+    "@types/katex": "^0.11.0",
+    "@types/markdown-it": "^10.0.1",
+    "@types/node": "^14.0.27",
+    "jest": "^26.2.2",
+    "katex": "^0.12.0",
+    "markdown-it": "^11.0.0",
+    "markdown-it-testgen": "^0.1.6",
+    "prettier": "^2.0.5",
+    "rollup": "^2.23.1",
+    "rollup-plugin-typescript2": "^0.27.2",
+    "tape": "^5.0.1",
+    "ts-jest": "^26.1.4",
+    "typescript": "^3.9.7"
+  },
+  "engines": {
+    "node": ">=10.0.0"
   }
 }
