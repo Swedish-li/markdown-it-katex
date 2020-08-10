@@ -22,7 +22,7 @@ npm install markdown-it
 Install the plugin
 
 ```
-npm install @swedish/markdown-it-katex
+npm install @swedish-li/markdown-it-katex
 ```
 
 Use it in your javascript
