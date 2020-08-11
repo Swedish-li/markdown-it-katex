@@ -8,10 +8,10 @@ exports[`markdown katex render Block math can be indented up to 3 spaces 1`] = `
 
 exports[`markdown katex render But 4 means a code block 1`] = `
 "<pre><code>$$
+1+1 = 2
+$$
 </code></pre>
-<p>1+1 = 2</p>
-<p><span class=\\"katex-display\\"><span class=\\"katex\\"><span class=\\"katex-mathml\\"><math xmlns=\\"http://www.w3.org/1998/Math/MathML\\" display=\\"block\\"><semantics><mrow></mrow><annotation encoding=\\"application/x-tex\\">
-</annotation></semantics></math></span><span class=\\"katex-html\\" aria-hidden=\\"true\\"></span></span></span></p>"
+"
 `;
 
 exports[`markdown katex render Display and inline math can appear in lists 1`] = `
@@ -38,15 +38,16 @@ exports[`markdown katex render Display math self-closes at the end of document 1
 `;
 
 exports[`markdown katex render Escaped delimiters in math mode 1`] = `
-"<p>Money adds: $$X + $Y = <span class=\\"katex\\"><span class=\\"katex-mathml\\"><math xmlns=\\"http://www.w3.org/1998/Math/MathML\\"><semantics><mrow><mi>Z</mi></mrow><annotation encoding=\\"application/x-tex\\">Z</annotation></semantics></math></span><span class=\\"katex-html\\" aria-hidden=\\"true\\"><span class=\\"base\\"><span class=\\"strut\\" style=\\"height:0.68333em;vertical-align:0em;\\"></span><span class=\\"mord mathnormal\\" style=\\"margin-right:0.07153em;\\">Z</span></span></span></span>.</p>
+"<p>Money adds: <span class=\\"katex\\"><span class=\\"katex-mathml\\"><math xmlns=\\"http://www.w3.org/1998/Math/MathML\\"><semantics><mrow><mi mathvariant=\\"normal\\">$</mi><mi>X</mi><mo>+</mo><mi mathvariant=\\"normal\\">$</mi><mi>Y</mi><mo>=</mo><mi mathvariant=\\"normal\\">$</mi><mi>Z</mi></mrow><annotation encoding=\\"application/x-tex\\">\\\\$X + \\\\$Y = \\\\$Z</annotation></semantics></math></span><span class=\\"katex-html\\" aria-hidden=\\"true\\"><span class=\\"base\\"><span class=\\"strut\\" style=\\"height:0.83333em;vertical-align:-0.08333em;\\"></span><span class=\\"mord\\">$</span><span class=\\"mord mathnormal\\" style=\\"margin-right:0.07847em;\\">X</span><span class=\\"mspace\\" style=\\"margin-right:0.2222222222222222em;\\"></span><span class=\\"mbin\\">+</span><span class=\\"mspace\\" style=\\"margin-right:0.2222222222222222em;\\"></span></span><span class=\\"base\\"><span class=\\"strut\\" style=\\"height:0.80556em;vertical-align:-0.05556em;\\"></span><span class=\\"mord\\">$</span><span class=\\"mord mathnormal\\" style=\\"margin-right:0.22222em;\\">Y</span><span class=\\"mspace\\" style=\\"margin-right:0.2777777777777778em;\\"></span><span class=\\"mrel\\">=</span><span class=\\"mspace\\" style=\\"margin-right:0.2777777777777778em;\\"></span></span><span class=\\"base\\"><span class=\\"strut\\" style=\\"height:0.80556em;vertical-align:-0.05556em;\\"></span><span class=\\"mord\\">$</span><span class=\\"mord mathnormal\\" style=\\"margin-right:0.07153em;\\">Z</span></span></span></span>.</p>
 "
 `;
 
 exports[`markdown katex render Escaped delimiters should not render math 1`] = `
-"<p>Foo <span class=\\"katex\\"><span class=\\"katex-mathml\\"><math xmlns=\\"http://www.w3.org/1998/Math/MathML\\"><semantics><mrow><mn>1</mn></mrow><annotation encoding=\\"application/x-tex\\">1</annotation></semantics></math></span><span class=\\"katex-html\\" aria-hidden=\\"true\\"><span class=\\"base\\"><span class=\\"strut\\" style=\\"height:0.64444em;vertical-align:0em;\\"></span><span class=\\"mord\\">1</span></span></span></span> bar</p>
-<p><span class=\\"katex-display\\"><span class=\\"katex\\"><span class=\\"katex-mathml\\"><math xmlns=\\"http://www.w3.org/1998/Math/MathML\\" display=\\"block\\"><semantics><mrow><mn>1</mn></mrow><annotation encoding=\\"application/x-tex\\">1
-
-</annotation></semantics></math></span><span class=\\"katex-html\\" aria-hidden=\\"true\\"><span class=\\"base\\"><span class=\\"strut\\" style=\\"height:0.64444em;vertical-align:0em;\\"></span><span class=\\"mord\\">1</span></span></span></span></span></p>"
+"<p>Foo $1$ bar
+$$
+1
+$$</p>
+"
 `;
 
 exports[`markdown katex render Even when it starts with a negative sign 1`] = `
@@ -82,7 +83,7 @@ exports[`markdown katex render Multiline inline math 1`] = `
 `;
 
 exports[`markdown katex render Multiple escaped delimiters in math module 1`] = `
-"<p>Weird-o: $displaystyle{egin{pmatrix} $ &amp; 1$ end{pmatrix}}$.</p>
+"<p>Weird-o: <span class=\\"katex\\"><span class=\\"katex-mathml\\"><math xmlns=\\"http://www.w3.org/1998/Math/MathML\\"><semantics><mrow><mstyle scriptlevel=\\"0\\" displaystyle=\\"true\\"><mrow><mo fence=\\"true\\">(</mo><mtable rowspacing=\\"0.15999999999999992em\\" columnspacing=\\"1em\\"><mtr><mtd><mstyle scriptlevel=\\"0\\" displaystyle=\\"false\\"><mi mathvariant=\\"normal\\">$</mi></mstyle></mtd><mtd><mstyle scriptlevel=\\"0\\" displaystyle=\\"false\\"><mn>1</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel=\\"0\\" displaystyle=\\"false\\"><mi mathvariant=\\"normal\\">$</mi></mstyle></mtd></mtr></mtable><mo fence=\\"true\\">)</mo></mrow></mstyle></mrow><annotation encoding=\\"application/x-tex\\">\\\\displaystyle{\\\\begin{pmatrix} \\\\$ &amp; 1\\\\\\\\\\\\$ \\\\end{pmatrix}}</annotation></semantics></math></span><span class=\\"katex-html\\" aria-hidden=\\"true\\"><span class=\\"base\\"><span class=\\"strut\\" style=\\"height:2.40003em;vertical-align:-0.95003em;\\"></span><span class=\\"mord\\"><span class=\\"minner\\"><span class=\\"mopen delimcenter\\" style=\\"top:0em;\\"><span class=\\"delimsizing size3\\">(</span></span><span class=\\"mord\\"><span class=\\"mtable\\"><span class=\\"col-align-c\\"><span class=\\"vlist-t vlist-t2\\"><span class=\\"vlist-r\\"><span class=\\"vlist\\" style=\\"height:1.45em;\\"><span style=\\"top:-3.61em;\\"><span class=\\"pstrut\\" style=\\"height:3em;\\"></span><span class=\\"mord\\"><span class=\\"mord\\">$</span></span></span><span style=\\"top:-2.4099999999999997em;\\"><span class=\\"pstrut\\" style=\\"height:3em;\\"></span><span class=\\"mord\\"><span class=\\"mord\\">$</span></span></span></span><span class=\\"vlist-s\\">​</span></span><span class=\\"vlist-r\\"><span class=\\"vlist\\" style=\\"height:0.9500000000000004em;\\"><span></span></span></span></span></span><span class=\\"arraycolsep\\" style=\\"width:0.5em;\\"></span><span class=\\"arraycolsep\\" style=\\"width:0.5em;\\"></span><span class=\\"col-align-c\\"><span class=\\"vlist-t\\"><span class=\\"vlist-r\\"><span class=\\"vlist\\" style=\\"height:1.45em;\\"><span style=\\"top:-3.61em;\\"><span class=\\"pstrut\\" style=\\"height:3em;\\"></span><span class=\\"mord\\"><span class=\\"mord\\">1</span></span></span></span></span></span></span></span></span><span class=\\"mclose delimcenter\\" style=\\"top:0em;\\"><span class=\\"delimsizing size3\\">)</span></span></span></span></span></span></span>.</p>
 "
 `;
 
