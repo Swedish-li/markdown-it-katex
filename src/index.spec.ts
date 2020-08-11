@@ -242,4 +242,19 @@ $$
 
     expect(output).toMatchSnapshot()
   })
+
+  it('should call console.error with log throwOnError is true', () => {
+    const logFn = jest.fn()
+    console.error = logFn
+
+    const mdShowErr = MarkdownIt('default', {
+      throwOnError: true,
+    } as MarkdownIt.Options).use(mdk)
+
+    mdShowErr.render('$\\atopwithdelims a b c d e$')
+    expect(logFn).toHaveBeenCalledTimes(1)
+
+    mdShowErr.render('$$\\atopwithdelims a b c \n ssbs$$')
+    expect(logFn).toHaveBeenCalledTimes(2)
+  })
 })
