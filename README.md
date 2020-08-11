@@ -1,4 +1,4 @@
-# @swedish-li/markdown-it-katex
+# @swedish-li/markdown-it-katex [![CircleCI](https://circleci.com/gh/Swedish-li/markdown-it-katex.svg?style=svg&circle-token=8acd039200b79a24690a5a188e5b62192fe80d1c)](https://circleci.com/gh/Swedish-li/markdown-it-katex)
 
 Forked from [waylonflinn/markdown-it-katex](https://github.com/waylonflinn/markdown-it-katex)
 
