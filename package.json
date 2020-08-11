@@ -1,12 +1,13 @@
 {
   "name": "@swedish-li/markdown-it-katex",
-  "version": "3.0.0-beta.4",
+  "version": "3.0.0-beta.5",
   "description": "Fast math support for markdown-it with KaTeX",
   "main": "dist/markdown-it-katex.cjs.js",
   "module": "dist/markdown-it-katex.esm.js",
   "types": "src/index.ts",
+  "unpkg": "dist/markdown-it-katex.umd.js",
   "files": [
-    "index.js",
+    "src",
     "dist"
   ],
   "scripts": {

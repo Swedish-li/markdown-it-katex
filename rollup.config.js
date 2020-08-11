@@ -1,9 +1,6 @@
-// rollup.config.js
-// import json from '@rollup/plugin-json';
 import ts from 'rollup-plugin-typescript2'
 import path from 'path'
 
-// const srcDir = path.resolve(__dirname, 'src')
 const resolve = (p) => path.resolve(__dirname, p)
 const name = 'markdown-it-katex'
 
@@ -12,16 +9,16 @@ export default {
   output: [
     {
       file: resolve(`dist/${name}.esm.js`),
-      format: `es`,
+      format: 'es',
     },
     {
       file: resolve(`dist/${name}.cjs.js`),
-      format: `cjs`,
+      format: 'cjs',
       exports: 'auto',
     },
     {
-      file: resolve(`dist/${name}.js`),
-      format: `iife`,
+      file: resolve(`dist/${name}.umd.js`),
+      format: 'umd',
       name,
       globals: {
         katex: 'katex',
