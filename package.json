@@ -12,7 +12,8 @@
   "scripts": {
     "prebuild": "rm -rf dist",
     "build": "rollup --config",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "ci-test" : "jest --ci --coverage && codecov"
   },
   "repository": {
     "type": "git",
@@ -36,6 +37,7 @@
     "@types/katex": "^0.11.0",
     "@types/markdown-it": "^10.0.1",
     "@types/node": "^14.0.27",
+    "codecov": "^3.7.2",
     "jest": "^26.2.2",
     "katex": "^0.12.0",
     "markdown-it": "^11.0.0",
