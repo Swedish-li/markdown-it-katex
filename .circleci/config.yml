@@ -30,7 +30,7 @@ jobs:
       - *install_deps
       - *save_cache
       - run: yarn build
-      - run: yarn test
+      - run: yarn ci-test
       
 workflows:
   ci:
