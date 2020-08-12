@@ -6,7 +6,7 @@ name: CI
 # events but only for the master branch
 on:
   push:
-    branches: [ setup-deploy ]
+    branches: [ master ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -55,7 +55,7 @@ jobs:
         # The author name and email address
         author: Swedish-li<one.piece.li.2016@gmail.com>
         # Commit message
-        commit_message: deploy
+        commit_message: deploy [ci skip]
         # Write the given domain name to the CNAME file
         # Allow Jekyll to build your site
         jekyll: false
