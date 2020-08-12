@@ -194,7 +194,12 @@ describe('markdown katex render', () => {
     expect(output).toMatchSnapshot()
   })
 
-  it('should call console.error with option throwOnError is true', () => {
+  it('should escape html when katex render latex failed', () => {
+    const output = md.render('$\\unicode{<img src=x onerror=alert(1)>}$')
+    expect(output).toMatchSnapshot()
+  })
+
+  it('should call console.error when option throwOnError is true', () => {
     const logFn = jest.fn()
     console.error = logFn
 
@@ -209,18 +214,18 @@ describe('markdown katex render', () => {
     expect(logFn).toHaveBeenCalledTimes(2)
   })
 
-  it('should not call console.error with option throwOnError is false', () => {
+  it('should not call console.error when option throwOnError is false', () => {
     const logFn = jest.fn()
     console.error = logFn
 
-    const mdShowErr = MarkdownIt('default', {
+    const mdNotShowErr = MarkdownIt('default', {
       throwOnError: false,
     } as MarkdownIt.Options).use(mdk)
 
-    mdShowErr.render('$\\atopwithdelims a b c d e$')
+    mdNotShowErr.render('$\\atopwithdelims a b c d e$')
     expect(logFn).not.toBeCalled()
 
-    mdShowErr.render('$$\\atopwithdelims a b c \n ssbs$$')
+    mdNotShowErr.render('$$\\atopwithdelims a b c \n ssbs$$')
     expect(logFn).not.toBeCalled()
   })
 })

@@ -1,12 +1,21 @@
-import katex from 'katex';
+import katex from 'katex'
 import MarkdownIt, { Options } from 'markdown-it'
 import { RenderRule } from 'markdown-it/lib/renderer'
 import { RuleInline } from 'markdown-it/lib/parser_inline'
 import { RuleBlock } from 'markdown-it/lib/parser_block'
 import StateInline from 'markdown-it/lib/rules_inline/state_inline'
 import Token from 'markdown-it/lib/token'
+import { escapeHtml } from './utils'
 
-// Test if potential opening or closing delimieter
+const handleError = (latex: string, error: Error, options: PluginOptions) => {
+  if (options.throwOnError) {
+    console.error(error)
+  }
+
+  return escapeHtml(latex)
+}
+
+// Test if potential opening or closing delimiter
 // Assumes that there is a "$" at state.src[pos]
 
 const isValidDelim = (state: StateInline, pos: number) => {
@@ -52,10 +61,7 @@ const inlineRenderer: RenderRule = (
   try {
     return katex.renderToString(latex, options)
   } catch (error) {
-    if (options.throwOnError) {
-      console.error(error)
-    }
-    return latex
+    return handleError(latex, error, options)
   }
 }
 
@@ -71,10 +77,7 @@ const blockRenderer: RenderRule = (
   try {
     return `<p>${katex.renderToString(latex, opts)}</p>`
   } catch (error) {
-    if (options.throwOnError) {
-      console.error(error)
-    }
-    return latex
+    return handleError(latex, error, options)
   }
 }
 
@@ -89,10 +92,10 @@ const mathInlineRule: RuleInline = (state, silent) => {
     return true
   }
   let start: number, match: number, token: Token, pos: number
-  // First check for and bypass all properly escaped delimieters
+  // First check for and bypass all properly escaped delimiters
   // This loop will assume that the first leading backtick can not
   // be the first character in state.src, which is known since
-  // we have found an opening delimieter already.
+  // we have found an opening delimiter already.
   start = state.pos + 1
   match = start
   while ((match = state.src.indexOf('$', match)) !== -1) {

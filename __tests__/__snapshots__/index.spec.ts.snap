@@ -146,3 +146,8 @@ exports[`markdown katex render Text can immediately follow inline math 1`] = `
 "<p><span class=\\"katex\\"><span class=\\"katex-mathml\\"><math xmlns=\\"http://www.w3.org/1998/Math/MathML\\"><semantics><mrow><mi>n</mi></mrow><annotation encoding=\\"application/x-tex\\">n</annotation></semantics></math></span><span class=\\"katex-html\\" aria-hidden=\\"true\\"><span class=\\"base\\"><span class=\\"strut\\" style=\\"height:0.43056em;vertical-align:0em;\\"></span><span class=\\"mord mathnormal\\">n</span></span></span></span>-th order</p>
 "
 `;
+
+exports[`markdown katex render should escape html when katex render latex failed 1`] = `
+"<p>\\\\unicode{&lt;img src=x onerror=alert(1)&gt;}</p>
+"
+`;
