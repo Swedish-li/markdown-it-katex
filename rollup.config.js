@@ -1,31 +1,72 @@
 import ts from 'rollup-plugin-typescript2'
 import path from 'path'
+import serve from 'rollup-plugin-serve'
+import { terser } from 'rollup-plugin-terser'
 
-const resolve = (p) => path.resolve(__dirname, p)
-const name = 'markdown-it-katex'
+const distDir = 'dist'
+const pluginName = 'markdown-it-katex'
+const globalName = 'markdownItKatex'
+const resolveFileName = (type) =>
+  path.resolve(__dirname, distDir, `${pluginName}.${type}.js`)
 
-export default {
-  input: 'src/index.ts',
-  output: [
+const configArr = []
+const plugins = [ts()]
+const output = [
+  {
+    file: resolveFileName('umd'),
+    format: 'umd',
+    name: globalName,
+    globals: {
+      katex: 'katex',
+    },
+    extend: true,
+  },
+]
+
+if (process.env.NODE_ENV === 'development') {
+  plugins.push(
+    serve({
+      contentBase: ['dist', 'example'],
+      verbose: true,
+    })
+  )
+}
+
+if (process.env.NODE_ENV === 'production') {
+  output.push(
     {
-      file: resolve(`dist/${name}.esm.js`),
+      file: resolveFileName('esm'),
       format: 'es',
     },
     {
-      file: resolve(`dist/${name}.cjs.js`),
+      file: resolveFileName('cjs'),
       format: 'cjs',
       exports: 'auto',
-    },
-    {
-      file: resolve(`dist/${name}.umd.js`),
+    }
+  )
+  // UMD Production
+
+  configArr.push({
+    input: 'src/index.ts',
+    output: {
+      file: resolveFileName('umd.min'),
       format: 'umd',
-      name,
+      name: globalName,
       globals: {
         katex: 'katex',
       },
       extend: true,
     },
-  ],
-  external: ['katex'],
-  plugins: [ts()],
+    external: ['katex'],
+    plugins: [...plugins, terser()],
+  })
 }
+
+configArr.push({
+  input: 'src/index.ts',
+  output,
+  external: ['katex'],
+  plugins,
+})
+
+export default configArr

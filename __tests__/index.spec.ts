@@ -1,4 +1,4 @@
-import mdk from './index'
+import mdk from '../src/index'
 import MarkdownIt from 'markdown-it'
 
 const md = MarkdownIt().use(mdk)
