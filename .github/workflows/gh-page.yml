@@ -51,9 +51,9 @@ jobs:
         # Build directory to deploy
         build_dir: example
         # The committer name and email address
-        committer: Swedish-li
+        committer: gh-bot<hha649330@gmail.com>
         # The author name and email address
-        author: one.piece.li.2016@gmail.com
+        author: Swedish-li<one.piece.li.2016@gmail.com>
         # Commit message
         commit_message: deploy
         # Write the given domain name to the CNAME file
