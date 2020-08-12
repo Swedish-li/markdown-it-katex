@@ -1,4 +1,4 @@
-# @swedish-li/markdown-it-katex [![CircleCI](https://circleci.com/gh/Swedish-li/markdown-it-katex.svg?style=svg&circle-token=8acd039200b79a24690a5a188e5b62192fe80d1c)](https://circleci.com/gh/Swedish-li/markdown-it-katex) [![codecov](https://codecov.io/gh/Swedish-li/markdown-it-katex/branch/master/graph/badge.svg)](https://codecov.io/gh/Swedish-li/markdown-it-katex)
+# @swedish-li/markdown-it-katex [!["View this project on npm"](http://img.shields.io/npm/v/@swedish-li/markdown-it-katex.svg?style=flat)](https://www.npmjs.com/package/@swedish-li/markdown-it-katex) [![CircleCI](https://circleci.com/gh/Swedish-li/markdown-it-katex.svg?style=svg&circle-token=8acd039200b79a24690a5a188e5b62192fe80d1c)](https://circleci.com/gh/Swedish-li/markdown-it-katex) [![codecov](https://codecov.io/gh/Swedish-li/markdown-it-katex/branch/master/graph/badge.svg)](https://codecov.io/gh/Swedish-li/markdown-it-katex)
 
 Forked from [waylonflinn/markdown-it-katex](https://github.com/waylonflinn/markdown-it-katex)
 
@@ -11,7 +11,7 @@ Add Math to your Markdown
 Need convincing?
 
 * Check out the comparative benchmark: [KaTeX vs MathJax](https://jsperf.com/katex-vs-mathjax/42)
-* Try it in your browser: [markdown-it-katex demo](http://waylonflinn.github.io/markdown-it-katex/)
+* Try it in your browser: [@swedish-li/markdown-it-katex demo](https://swedish-li.github.io/markdown-it-katex/)
 
 ## Usage
 Install markdown-it
