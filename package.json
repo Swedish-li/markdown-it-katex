@@ -15,7 +15,8 @@
     "build": "env NODE_ENV=production rollup --config",
     "test": "jest --coverage",
     "ci-test": "jest --ci --coverage && codecov",
-    "dev": "env NODE_ENV=development rollup --config --watch"
+    "dev": "env NODE_ENV=development rollup --config --watch",
+    "build-gh-pages": "yarn build &&  mv ./dist/markdown-it-katex.umd.min.js ./example/markdown-it-katex.umd.js"
   },
   "repository": {
     "type": "git",
