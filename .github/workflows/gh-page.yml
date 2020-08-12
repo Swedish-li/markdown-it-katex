@@ -45,7 +45,7 @@ jobs:
       with:
         target_branch: gh-pages
         # Create incremental commit instead of doing push force
-        keep_history: true
+        keep_history: false
         # Allow an empty commit to be created
         allow_empty_commit: false
         # Build directory to deploy

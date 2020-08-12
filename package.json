@@ -16,7 +16,8 @@
     "test": "jest --coverage",
     "ci-test": "jest --ci --coverage && codecov",
     "dev": "env NODE_ENV=development rollup --config --watch",
-    "build-gh-pages": "yarn build &&  mv ./dist/markdown-it-katex.umd.min.js ./example/markdown-it-katex.umd.js"
+    "build-gh-pages": "yarn build &&  yarn cp-gh-files",
+    "cp-gh-files": "cp README.md ./example && mv ./dist/markdown-it-katex.umd.min.js ./example/markdown-it-katex.umd.js"
   },
   "repository": {
     "type": "git",
