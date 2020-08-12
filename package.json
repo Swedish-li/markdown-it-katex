@@ -1,6 +1,6 @@
 {
   "name": "@swedish-li/markdown-it-katex",
-  "version": "3.0.0-beta.5",
+  "version": "3.0.0-beta.7",
   "description": "Fast math support for markdown-it with KaTeX",
   "main": "dist/markdown-it-katex.cjs.js",
   "module": "dist/markdown-it-katex.esm.js",
@@ -12,9 +12,10 @@
   ],
   "scripts": {
     "prebuild": "rm -rf dist",
-    "build": "rollup --config",
+    "build": "env NODE_ENV=production rollup --config",
     "test": "jest --coverage",
-    "ci-test" : "jest --ci --coverage && codecov"
+    "ci-test": "jest --ci --coverage && codecov",
+    "dev": "env NODE_ENV=development rollup --config --watch"
   },
   "repository": {
     "type": "git",
@@ -28,7 +29,7 @@
     "markdown-it-plugin",
     "markdown-it"
   ],
-  "author": "Swedish-li<one.piece.li.2016@gmail.com>",
+  "author": "Swedish li",
   "license": "MIT",
   "peerDependencies": {
     "katex": "^0.12.0"
@@ -44,6 +45,8 @@
     "markdown-it": "^11.0.0",
     "prettier": "^2.0.5",
     "rollup": "^2.23.1",
+    "rollup-plugin-serve": "^1.0.3",
+    "rollup-plugin-terser": "^7.0.0",
     "rollup-plugin-typescript2": "^0.27.2",
     "ts-jest": "^26.1.4",
     "typescript": "^3.9.7"
