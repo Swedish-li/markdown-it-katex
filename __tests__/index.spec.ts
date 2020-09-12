@@ -203,9 +203,9 @@ describe('markdown katex render', () => {
     const logFn = jest.fn()
     console.error = logFn
 
-    const mdShowErr = MarkdownIt('default', {
+    const mdShowErr = MarkdownIt('default').use(mdk, {
       throwOnError: true,
-    } as MarkdownIt.Options).use(mdk)
+    })
 
     mdShowErr.render('$\\atopwithdelims a b c d e$')
     expect(logFn).toHaveBeenCalledTimes(1)
@@ -218,14 +218,24 @@ describe('markdown katex render', () => {
     const logFn = jest.fn()
     console.error = logFn
 
-    const mdNotShowErr = MarkdownIt('default', {
+    const mdNotShowErr = MarkdownIt('default').use(mdk, {
       throwOnError: false,
-    } as MarkdownIt.Options).use(mdk)
+    })
 
     mdNotShowErr.render('$\\atopwithdelims a b c d e$')
     expect(logFn).not.toBeCalled()
 
     mdNotShowErr.render('$$\\atopwithdelims a b c \n ssbs$$')
     expect(logFn).not.toBeCalled()
+  })
+
+  it('two characters inline delimeter should throw error',() => {
+    try {
+      MarkdownIt().use(mdk,{
+        inlineDelimeter: '%%'
+      })
+    } catch (error) {
+      expect(error.message).toBe('inline delimeter must be single character!')
+    }
   })
 })

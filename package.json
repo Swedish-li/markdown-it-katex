@@ -17,7 +17,8 @@
     "ci-test": "jest --ci --coverage && codecov",
     "dev": "env NODE_ENV=development rollup --config --watch",
     "build-gh-pages": "yarn build &&  yarn cp-gh-files",
-    "cp-gh-files": "cp README.md ./example && mv ./dist/markdown-it-katex.umd.min.js ./example/markdown-it-katex.umd.js"
+    "cp-gh-files": "cp README.md ./example && mv ./dist/markdown-it-katex.umd.min.js ./example/markdown-it-katex.umd.js",
+    "format": "prettier --write --parser typescript \"{src,__tests__}/**/*.ts?(x)\""
   },
   "repository": {
     "type": "git",
@@ -39,7 +40,7 @@
   "devDependencies": {
     "@types/jest": "^26.0.9",
     "@types/katex": "^0.11.0",
-    "@types/markdown-it": "^10.0.1",
+    "@types/markdown-it": "^10.0.2",
     "@types/node": "^14.0.27",
     "codecov": "^3.7.2",
     "jest": "^26.2.2",

@@ -1,5 +1,3 @@
-// console.warn(markdownit)
-// console.warn(katex)
 
 function debounce(callback, debounceTime) {
   let timeout
@@ -16,11 +14,11 @@ function debounce(callback, debounceTime) {
   }
 }
 
-var md = markdownit({
-  throwOnError: true,
-})
+var md = markdownit()
 
-md.use(markdownItKatex)
+md.use(markdownItKatex,{
+  throwOnError: false,
+})
 
 var output = document.getElementById('output')
 var input = document.getElementById('input')
