@@ -229,10 +229,10 @@ describe('markdown katex render', () => {
     expect(logFn).not.toBeCalled()
   })
 
-  it('two characters inline delimeter should throw error',() => {
+  it('two characters inline delimeter should throw error', () => {
     try {
-      MarkdownIt().use(mdk,{
-        inlineDelimeter: '%%'
+      MarkdownIt().use(mdk, {
+        inlineDelimeter: '%%',
       })
     } catch (error) {
       expect(error.message).toBe('inline delimeter must be single character!')
